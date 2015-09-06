@@ -76,4 +76,15 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.paperclip_defaults = {
+      :storage => :fog,
+      :fog_credentials => {
+        :provider => "AWS",
+        :aws_access_key_id => ENV['AKIAIXQNWFMZSBHJMHZQ'],
+        :aws_secret_access_key => ENV['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']
+      },
+      :fog_directory => ENV["railscast"]
+    }
+
 end
